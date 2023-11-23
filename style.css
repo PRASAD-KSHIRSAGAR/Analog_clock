@@ -1,0 +1,148 @@
+*
+{
+    box-sizing: 0;
+}
+:root
+{
+    --main-bg-color:#fff;
+    --main-text-color:#888888;
+
+}
+
+[data-theme="dark"]
+{
+    --main-bg-color:#1e1f26;
+    --main-text-color:#ccc;
+
+}
+body
+{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size:  16px;
+    background-color: var(--main-bg-color);
+    position: relative;
+    transition: all ease 0.2s;
+}
+
+.heading-page
+{
+    font-size: 2rem;
+    color:var(--main-text-color);
+    padding: 1rem 0;
+    font-family: monospace;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: all ease 0.2s;
+}
+
+.clock
+{
+    background-image: url("./clock-without-arms-md.png");
+    min-height:26rem;
+    min-width: 26rem;
+    display: flex;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-bg-color);
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    border:4px solid var(--main-bg-color);
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),inset 0 -15px 15px rgba(0,0,0,0.3),inset 0 15px 15px rgba(0,0,0,0.3); 
+    transition: all ease 0.2s;
+}
+
+.clock ::before{
+    contain:"";
+    height: 0.75rem;
+    width: 0.75rem;
+    border: 2px solid var(--main-bg-color);
+    background-color: var(--main-bg-color);
+    position: absolute;
+    border-radius: 50%;
+    transition: all ease 0.2s;
+    z-index: 1000;
+}
+
+.hour,.min,.sec{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+
+}
+
+.hour
+{
+    height: 12em;
+    width: 10em;
+
+}
+
+.hour:before
+{
+    content: "";
+    position: absolute;
+    height: 84px;
+    background-color: var(--main-text-color);
+    width: 6px;
+    border-radius: 4px;
+}
+.min
+{
+    height: 12em;
+    width: 12em;
+
+}
+
+.min::before
+{
+    content: "";
+    height: 85px;
+    width: 4px;
+    background-color: var(--main-text-color);
+    border-radius: 4px;
+}
+
+.sec
+{
+    height: 13em;
+    width: 13em;
+
+}
+
+.sec::before
+{
+    content: "";
+    height: 60%;
+    width: 4px;
+    background-color: red;
+    border-radius: 2px;
+
+}
+
+.switch-cont
+{
+    margin: 2em auto;
+    bottom: 0;
+}
+
+.switch-cont .switch-btn
+{
+    font-family: monospace;
+    text-transform: uppercase;
+    outline: none;
+    padding: 0.5rem 1rem;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    border: 1px solid var(--main-text-color);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: all ease 0.2s;   
+}
